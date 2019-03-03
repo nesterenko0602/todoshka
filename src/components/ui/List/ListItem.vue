@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="list-item__wrapper">
     ListItem
   </div>
 </template>
@@ -10,7 +10,8 @@ export default {
 };
 </script>
 
-<style scoped>
-  .wrapper {
+<style lang="scss" scoped>
+  .list-item__wrapper {
+    color: white;
   }
 </style>

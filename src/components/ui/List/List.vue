@@ -15,9 +15,11 @@ export default {
 
   .list__wrapper {
     background: white;
-    border-radius: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
     box-shadow: 0 0 32px 8px rgba(0,0,0,.1);
-    padding: 30px;
+    padding: 12px 56px 32px;
+    margin: 20px;
     width: 500px;
   }
 </style>

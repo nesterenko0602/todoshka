@@ -22,10 +22,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~variables';
 @import 'styles/common';
 
 #app {
-  color: #2c3e50;
+  color: $dark;
   display: flex;
   flex-direction: column;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

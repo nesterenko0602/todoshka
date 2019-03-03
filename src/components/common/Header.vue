@@ -15,5 +15,6 @@ export default {
 <style scoped>
   .section {
     flex: 0 0 auto;
+    margin-bottom: 60px;
   }
 </style>
