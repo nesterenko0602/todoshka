@@ -1,16 +1,28 @@
 <template>
   <div class="list__wrapper">
     <ListHeader message="ToDo List" />
+    <Input
+      placeholder="Leave ToDo"
+      name="newToDo"
+      v-on:submit="this.saveValue"
+    />
   </div>
 </template>
 
 <script>
 import ListHeader from 'components/ui/List/ListHeader';
+import Input from 'components/ui/Input';
 export default {
   name: 'List',
   components: {
     ListHeader,
+    Input,
   },
+  methods: {
+    saveValue: function({ value }) {
+      // this.$store.commit('updateMessage', { value });
+    },
+  }
 };
 </script>
 
