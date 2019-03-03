@@ -1,12 +1,16 @@
 <template>
-    List
   <div class="list__wrapper">
+    <ListHeader message="ToDo List" />
   </div>
 </template>
 
 <script>
+import ListHeader from 'components/ui/List/ListHeader';
 export default {
   name: 'List',
+  components: {
+    ListHeader,
+  },
 };
 </script>
 
