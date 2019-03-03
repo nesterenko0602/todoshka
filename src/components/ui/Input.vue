@@ -4,26 +4,37 @@
       class="input"
       type="text"
       :placeholder="placeholder"
-      v-on:keydown="this.handleKey"
+      @:keydown="handleKey"
     >
+    <Icon name="send" />
   </div>
 </template>
 
 <script>
 import { KEY_CODES } from 'constants/constants';
+import Icon from 'components/ui/Icon';
 
 export default {
   name: 'Input',
+  components: {
+    Icon,
+  },
   props: {
-    name: String,
-    placeholder: String,
+    name: {
+      type: String,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
   },
   methods: {
-    handleKey: function(event) {
+    handleKey: function handleKey(event) {
       const { keyCode, target: { value } } = event;
 
       if (keyCode === KEY_CODES.ENTER && value) {
-        return this.$emit('submit', { name: this.name, value });
+        this.$emit('submit', { name: this.name, value });
       }
     },
   },
@@ -40,7 +51,7 @@ export default {
 .input {
   background-color: $grey-lighter;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
   padding: 12px;

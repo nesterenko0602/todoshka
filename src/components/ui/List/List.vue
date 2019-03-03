@@ -4,25 +4,30 @@
     <Input
       placeholder="Leave ToDo"
       name="newToDo"
-      v-on:submit="this.saveValue"
+      @:submit="saveValue"
     />
+    <ListCollection />
   </div>
 </template>
 
 <script>
 import ListHeader from 'components/ui/List/ListHeader';
+import ListCollection from 'components/ui/List/ListCollection';
 import Input from 'components/ui/Input';
+
 export default {
   name: 'List',
   components: {
     ListHeader,
+    ListCollection,
     Input,
   },
   methods: {
-    saveValue: function({ value }) {
+    saveValue: function saveValue({ value }) {
+      console.log(value);
       // this.$store.commit('updateMessage', { value });
     },
-  }
+  },
 };
 </script>
 

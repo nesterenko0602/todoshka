@@ -1,12 +1,12 @@
 <template>
-<div class="checkbox">
-  <input
-    type="checkbox"
-    v-bind:id="id"
-    v-bind:checked="checked"
-    v-on:change="$emit('change', { checked: $event.target.checked, id })"
-  >
-</div>
+  <div class="checkbox">
+    <input
+      :id="id"
+      type="checkbox"
+      :checked="checked"
+      @:change="$emit('change', { checked: $event.target.checked, id })"
+    >
+  </div>
 </template>
 
 <script>
@@ -17,8 +17,14 @@ export default {
     event: 'change',
   },
   props: {
-    checked: Boolean,
-    id: Number,
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: Number,
+      required: true,
+    },
   },
 };
 </script>
