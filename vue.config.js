@@ -6,7 +6,12 @@ module.exports = {
       modules : [
         path.resolve("./src"),
         path.resolve("./node_modules")
-      ]
+      ],
+      alias: {
+        '~variables': path.resolve(
+          "./src/styles/variables.scss",
+        ),
+      }
     },
 	}
 }
