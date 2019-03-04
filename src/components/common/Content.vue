@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="content__wrapper">
     <List />
   </section>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .section {
+  .content__wrapper {
     flex: 1 1 auto;
     margin: 0 auto;
   }

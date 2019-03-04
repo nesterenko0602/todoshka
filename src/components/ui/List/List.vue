@@ -1,8 +1,8 @@
 <template>
   <div class="list__wrapper">
-    <ListHeader message="ToDo List" />
+    <ListHeader message="Tasks list" />
     <Input
-      placeholder="Leave ToDo"
+      placeholder="Leave a task"
       name="newToDo"
       @:submit="saveValue"
     />
