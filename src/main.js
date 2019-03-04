@@ -5,6 +5,7 @@ import App from './App';
 import store from './store';
 
 Vue.use(VueSVGIcon);
+
 Vue.config.productionTip = false;
 
 new Vue({

@@ -3,19 +3,26 @@
     <Checkbox
       :id="id"
       :checked="checked"
-      @:change="changeHandler"
+      @change.native="changeHandler"
     />
     <label :for="id">{{ message }}</label>
+    <Icon
+      name="delete"
+      size="18"
+      @click.native="deleteHandler"
+    />
   </div>
 </template>
 
 <script>
 import Checkbox from 'components/ui/Checkbox';
+import Icon from 'components/ui/Icon';
 
 export default {
   name: 'ListItem',
   components: {
     Checkbox,
+    Icon,
   },
   props: {
     checked: {
@@ -32,9 +39,12 @@ export default {
     },
   },
   methods: {
-    changeHandler: function changeHandler({ checked, id }) {
-      console.log(checked, id);
-      // debugger;
+    changeHandler: function changeHandler(event) {
+      const { checked } = event.target;
+      console.log(checked, this.id);
+    },
+    deleteHandler: function changeHandler() {
+      console.log(this.id);
     },
   },
 };
@@ -48,16 +58,32 @@ export default {
     border-radius: 4px;
     display: flex;
     margin-bottom: 4px;
-    padding: 0 8px;
+    padding-left: 8px;
 
     label {
       cursor: pointer;
-      padding: 4px 0 4px 8px;
+      padding: 4px 4px 4px 8px;
       width: 100%;
+    }
+
+    .svg-icon {
+      cursor: pointer;
+      display: none;
+      fill: $grey-dark;
+      padding: 6px 8px;
+      transition: fill .3s ease;
+
+      &:hover {
+        fill: $alert;
+      }
     }
 
     &:hover {
       background: $grey-lighter;
+
+      .svg-icon {
+        display: block;
+      }
     }
   }
 </style>
