@@ -5,19 +5,21 @@
       type="text"
       :class="classNames"
       :placeholder="placeholder"
-      @keydown="handleKey"
+      @keydown="keyDownHandler"
     >
     <Icon
       name="send"
       size="16"
-      @click.native="save"
+      @click.native="send"
     />
   </div>
 </template>
 
 <script>
-import { KEY_CODES } from 'constants/constants';
+import { mapActions } from 'vuex';
+
 import Icon from 'components/ui/Icon';
+import { KEY_CODES } from 'constants/constants';
 
 export default {
   name: 'Input',
@@ -51,25 +53,27 @@ export default {
     },
   },
   methods: {
-    handleKey: function handleKey(event) {
+    ...mapActions([
+      'addItem',
+    ]),
+    keyDownHandler: function keyDownHandler(event) {
       const { keyCode } = event;
 
       if (keyCode === KEY_CODES.ENTER) {
-        this.save();
+        this.send();
       }
     },
-    save: function save() {
+    send: function send() {
       if (!this.message) {
         return;
       }
 
-      console.log('saveNewMessage', { name: this.name, message: this.message });
-
+      this.addItem(this.message);
       this.dropMessage();
     },
     dropMessage: function dropMessage() {
       this.message = '';
-    }
+    },
   },
 };
 </script>

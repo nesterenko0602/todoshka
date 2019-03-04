@@ -4,7 +4,7 @@
       :id="id"
       type="checkbox"
       :checked="checked"
-      @:change="$emit('change', { checked: $event.target.checked, id })"
+      @change="$emit('change', { checked: $event.target.checked, id })"
     >
   </div>
 </template>

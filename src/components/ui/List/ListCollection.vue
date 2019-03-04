@@ -1,16 +1,22 @@
 <template>
   <div>
-    <ListItem
-      v-for="item in items"
-      :id="item.id"
-      :key="item.id"
-      :message="item.message"
-      :checked="item.checked"
-    />
+    <template v-if="items.length">
+      <ListItem
+        v-for="item in items"
+        :id="item.id"
+        :key="item.id"
+        :message="item.message"
+        :checked="item.checked"
+      />
+    </template>
+    <template v-if="!items.length">
+      No tasks in your list
+    </template>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import ListItem from 'components/ui/List/ListItem';
 
 export default {
@@ -18,21 +24,10 @@ export default {
   components: {
     ListItem,
   },
-  data: function() {
-    return {
-      items: [
-        {
-          id: 1,
-          checked: false,
-          message: 'Check the tickets',
-        },
-        {
-          id: 2,
-          checked: true,
-          message: 'Clean up bedroom',
-        },
-      ],
-    };
+  computed: {
+    ...mapGetters({
+      items: 'getItems',
+    }),
   },
 };
 </script>

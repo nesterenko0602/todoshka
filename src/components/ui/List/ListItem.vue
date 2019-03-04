@@ -3,18 +3,20 @@
     <Checkbox
       :id="id"
       :checked="checked"
-      @change.native="changeHandler"
+      @change="updateItem"
     />
     <label :for="id">{{ message }}</label>
     <Icon
       name="delete"
       size="18"
-      @click.native="deleteHandler"
+      @click.native="deleteClickHandler"
     />
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import Checkbox from 'components/ui/Checkbox';
 import Icon from 'components/ui/Icon';
 
@@ -39,12 +41,12 @@ export default {
     },
   },
   methods: {
-    changeHandler: function changeHandler(event) {
-      const { checked } = event.target;
-      console.log(checked, this.id);
-    },
-    deleteHandler: function changeHandler() {
-      console.log(this.id);
+    ...mapActions([
+      'updateItem',
+      'deleteItem',
+    ]),
+    deleteClickHandler: function deleteClickHandler() {
+      this.deleteItem(this.id);
     },
   },
 };

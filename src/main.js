@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueSVGIcon from 'vue-svgicon';
 
-import App from './App';
-import store from './store';
+import App from 'App';
+import store from 'store';
 
 Vue.use(VueSVGIcon);
 
