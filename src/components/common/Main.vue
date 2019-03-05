@@ -1,14 +1,14 @@
 <template>
-  <section class="content__wrapper">
+  <main class="content__wrapper">
     <List />
-  </section>
+  </main>
 </template>
 
 <script>
-import List from 'components/ui/List/List';
+import List from 'components/common/List';
 
 export default {
-  name: 'Content',
+  name: 'Main',
   components: {
     List,
   },

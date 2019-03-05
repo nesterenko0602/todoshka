@@ -10,14 +10,12 @@
     <Icon
       name="send"
       size="16"
-      @click.native="send"
+      @click.native="submit"
     />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-
 import Icon from 'components/ui/Icon';
 import { KEY_CODES } from 'constants/constants';
 
@@ -53,22 +51,19 @@ export default {
     },
   },
   methods: {
-    ...mapActions([
-      'addItem',
-    ]),
     keyDownHandler: function keyDownHandler(event) {
       const { keyCode } = event;
 
       if (keyCode === KEY_CODES.ENTER) {
-        this.send();
+        this.submit();
       }
     },
-    send: function send() {
+    submit: function submit() {
       if (!this.message) {
         return;
       }
 
-      this.addItem(this.message);
+      this.$emit('submit', this.message);
       this.dropMessage();
     },
     dropMessage: function dropMessage() {

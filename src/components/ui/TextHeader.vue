@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'ListHeader',
+  name: 'TextHeader',
   props: {
     message: {
       type: String,

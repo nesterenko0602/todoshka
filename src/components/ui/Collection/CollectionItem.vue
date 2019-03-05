@@ -3,7 +3,7 @@
     <Checkbox
       :id="id"
       :checked="checked"
-      @change="updateItem"
+      @change="updateClickHandler"
     />
     <label :for="id">{{ message }}</label>
     <Icon
@@ -15,13 +15,11 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-
 import Checkbox from 'components/ui/Checkbox';
 import Icon from 'components/ui/Icon';
 
 export default {
-  name: 'ListItem',
+  name: 'CollectionItem',
   components: {
     Checkbox,
     Icon,
@@ -41,12 +39,17 @@ export default {
     },
   },
   methods: {
-    ...mapActions([
-      'updateItem',
-      'deleteItem',
-    ]),
+    updateClickHandler: function deleteClickHandler() {
+      const { id, message, checked } = this;
+
+      this.$emit('update', {
+        id,
+        message,
+        checked: !checked,
+      });
+    },
     deleteClickHandler: function deleteClickHandler() {
-      this.deleteItem(this.id);
+      this.$emit('delete', this.id);
     },
   },
 };

@@ -1,22 +1,22 @@
 <template>
   <div id="app">
     <Header />
-    <Content />
+    <Main />
     <Footer />
   </div>
 </template>
 
 <script>
-import Content from 'components/common/Content';
 import Footer from 'components/common/Footer';
 import Header from 'components/common/Header';
+import Main from 'components/common/Main';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Content,
     Footer,
+    Main,
   },
 };
 </script>

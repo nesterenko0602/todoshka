@@ -1,32 +1,44 @@
 <template>
   <div class="list__wrapper">
-    <ListHeader message="Tasks list" />
+    <TextHeader message="Tasks list" />
     <Input
       placeholder="Leave a task"
       name="newToDo"
-      @:submit="saveValue"
+      @submit="addItem"
     />
-    <ListCollection />
+    <Collection
+      :items="items"
+      @update="updateItem"
+      @delete="deleteItem"
+    />
   </div>
 </template>
 
 <script>
-import ListHeader from 'components/ui/List/ListHeader';
-import ListCollection from 'components/ui/List/ListCollection';
+import { mapActions, mapGetters } from 'vuex';
+
+import Collection from 'components/ui/Collection/Collection';
 import Input from 'components/ui/Input';
+import TextHeader from 'components/ui/TextHeader';
 
 export default {
   name: 'List',
   components: {
-    ListHeader,
-    ListCollection,
+    Collection,
     Input,
+    TextHeader,
+  },
+  computed: {
+    ...mapGetters({
+      items: 'getItems',
+    }),
   },
   methods: {
-    saveValue: function saveValue({ value }) {
-      console.log(value);
-      // this.$store.commit('updateMessage', { value });
-    },
+    ...mapActions([
+      'addItem',
+      'deleteItem',
+      'updateItem',
+    ]),
   },
 };
 </script>

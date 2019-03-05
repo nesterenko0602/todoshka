@@ -4,7 +4,7 @@
       :id="id"
       type="checkbox"
       :checked="checked"
-      @change="$emit('change', { checked: $event.target.checked, id })"
+      @change="updateHandler"
     >
   </div>
 </template>
@@ -24,6 +24,14 @@ export default {
     id: {
       type: Number,
       required: true,
+    },
+  },
+  methods: {
+    updateHandler: function updateHandler(event) {
+      const { id } = this;
+      const { checked } = event.target;
+
+      this.$emit('change', { checked, id });
     },
   },
 };
