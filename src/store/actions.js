@@ -9,8 +9,8 @@ export default {
    * @param {Object} context.getters
    * @param {string} message ToDo item's text
    */
-  addItem({ commit, getters }, message = '') {
-    const id = getters.getLastItemId + 1;
+  addItem({ commit }, message = '') {
+    const id = (new Date()).getTime();
 
     commit(MUTATIONS.ADD, {
       id,

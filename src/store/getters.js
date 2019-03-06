@@ -19,21 +19,4 @@ export default {
 
     return id => items.find(item => item.id === id);
   },
-
-  /**
-   * Get latest message's ID
-   *
-   * @param {Object} state
-   * @param {Object} getters
-   * @returns {number}
-   */
-  getLastItemId: (state, getters) => {
-    const lastItem = getters.getItems[0];
-
-    if (!lastItem) {
-      return 0;
-    }
-
-    return lastItem.id;
-  },
 };

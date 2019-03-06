@@ -4,16 +4,12 @@
     <a
       href="https://nesterenko.page"
       target="_blank"
-    >
-      Dmitry Nesterenko
-    </a>
+    >Dmitry Nesterenko</a>
     for
     <a
       href="https://chainstack.com/"
       target="_blank"
-    >
-      Chainstack
-    </a>
+    >Chainstack</a>
     with ❤️
   </footer>
 </template>
