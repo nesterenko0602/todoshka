@@ -86,11 +86,11 @@ export default {
   cursor: pointer;
   fill: $grey;
   opacity: 0;
+  padding: 14px 12px 12px;
+  pointer-events: none;
   position: absolute;
   right: 0;
   top: 0px;
-  padding: 14px 12px 12px;
-  pointer-events: none;
   transition: all .3s ease;
 
   &:hover {

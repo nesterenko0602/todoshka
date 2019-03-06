@@ -6,6 +6,6 @@ export const KEY_CODES = {
 };
 
 /**
- * LocalStorage item's name for storing store
+ * LocalStorage key name to keep tasks list
  */
 export const STORAGE_NAME = 'ChainStackToDoList';
