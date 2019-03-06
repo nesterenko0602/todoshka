@@ -3,6 +3,7 @@
     <input
       v-model="message"
       type="text"
+      :name="name"
       :class="classNames"
       :placeholder="placeholder"
       @keydown="keyDownHandler"

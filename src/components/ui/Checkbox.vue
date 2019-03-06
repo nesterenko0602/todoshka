@@ -12,10 +12,6 @@
 <script>
 export default {
   component: 'Checkbox',
-  model: {
-    prop: 'checked',
-    event: 'change',
-  },
   props: {
     checked: {
       type: Boolean,
