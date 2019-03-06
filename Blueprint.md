@@ -6,7 +6,7 @@ Welcome to the **Todoshka API**. This API provides access to the **To-do** servi
 
 # Group Task
 
-# Tasks collection [/tasks]
+## Tasks collection [/tasks]
 
 A Task object has the following attributes:
 
@@ -14,7 +14,7 @@ A Task object has the following attributes:
 + **checked** - Current status of the task;
 + **message** - Text of the task.
 
-## List All Tasks [GET]
+### List All Tasks [GET]
 
 + Response 200 (application/json)
 
@@ -26,7 +26,7 @@ A Task object has the following attributes:
             }
         ]
 
-## Create a New Task [POST]
+### Create a New Task [POST]
 
 To create a new task pass JSON object containing following param:
 
@@ -48,9 +48,9 @@ To create a new task pass JSON object containing following param:
                     "message": "Task to do"
                 }
 
-# Task [/tasks/{task_id}]
+## Task [/tasks/{task_id}]
 
-## Update Existed Task [POST]
+### Update Existed Task [PUT]
 
 To update state of existing task pass JSON object containing following param:
 
@@ -65,12 +65,11 @@ To update state of existing task pass JSON object containing following param:
             "checked": true,
         }
 
-+ Response 201 (application/json)
++ Response 204
 
-    + Body
+### Delete Task [DELETE]
 
-                {
-                    "id": 1551798626919,
-                    "checked": true,
-                    "message": "Task to do"
-                }
++ Parameters
+    + task_id: 1551798626919 (required, number) - ID of the Task
+
++ Response 204
