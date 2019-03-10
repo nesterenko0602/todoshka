@@ -3,7 +3,6 @@
     <input
       v-model="message"
       type="text"
-      :name="name"
       :class="classNames"
       :placeholder="placeholder"
       @keydown="keyDownHandler"
@@ -26,10 +25,9 @@ export default {
     Icon,
   },
   props: {
-    name: {
-      type: String,
-      required: true,
-    },
+    /**
+     * Placeholder text for input tag
+     */
     placeholder: {
       type: String,
       default: '',
@@ -39,9 +37,20 @@ export default {
     return { message: '' };
   },
   computed: {
+    /**
+     * Whether input field not empty?
+     * 
+     * @returns {Boolean}
+     */
     isFilled: function isFilled() {
       return Boolean(this.message);
     },
+
+    /**
+     * List of class names for input field
+     * 
+     * @returns {Array}
+     */
     classNames: function classNames() {
       return [
         'input',
@@ -52,6 +61,11 @@ export default {
     },
   },
   methods: {
+    /**
+     * Input keydown event handler
+     * 
+     * @param {Event} event Native keydown event
+     */
     keyDownHandler: function keyDownHandler(event) {
       const { keyCode } = event;
 
@@ -59,6 +73,10 @@ export default {
         this.submit();
       }
     },
+
+    /**
+     * Form submit event handler
+     */
     submit: function submit() {
       if (!this.message) {
         return;
@@ -67,6 +85,10 @@ export default {
       this.$emit('submit', this.message);
       this.dropMessage();
     },
+
+    /**
+     * Clean up input field
+     */
     dropMessage: function dropMessage() {
       this.message = '';
     },

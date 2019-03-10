@@ -13,16 +13,28 @@
 export default {
   component: 'Checkbox',
   props: {
+    /**
+     * Whether checkbox checked (task is done)
+     */
     checked: {
       type: Boolean,
       default: false,
     },
+
+    /**
+     * Item ID
+     */
     id: {
       type: Number,
       required: true,
     },
   },
   methods: {
+    /**
+     * Checkbox state changing handler
+     * 
+     * @param {Event} event Native event
+     */
     updateHandler: function updateHandler(event) {
       const { id } = this;
       const { checked } = event.target;

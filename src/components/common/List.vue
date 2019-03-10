@@ -3,7 +3,6 @@
     <TextHeader message="Tasks list" />
     <Input
       placeholder="Leave a task"
-      name="newToDo"
       @submit="addItem"
     />
     <Collection
@@ -44,8 +43,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '~variables';
-
   .list__wrapper {
     background: white;
     border-radius: 8px;

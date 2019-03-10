@@ -26,15 +26,29 @@ export default {
     CollectionItem,
   },
   props: {
+    /**
+     * List of tasks
+     */
     items: {
       type: Array,
       required: true,
     },
   },
   methods: {
+    /**
+     * Item deletion event handler
+     * 
+     * @param {Number} itemId Id of element
+     */
     deleteHandler: function deleteHandler(itemId) {
       this.$emit('delete', itemId);
     },
+
+    /**
+     * Item state changing event handler
+     * 
+     * @param {Object} updatedItem Item to update
+     */
     updateHandler: function deleteHandler(updatedItem) {
       this.$emit('update', updatedItem);
     },

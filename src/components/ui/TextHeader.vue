@@ -8,6 +8,9 @@
 export default {
   name: 'TextHeader',
   props: {
+    /**
+     * Header text
+     */
     message: {
       type: String,
       default: '',

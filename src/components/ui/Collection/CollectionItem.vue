@@ -25,20 +25,34 @@ export default {
     Icon,
   },
   props: {
-    checked: {
-      type: Boolean,
-      default: false,
-    },
+    /**
+     * Item ID
+     */
     id: {
       type: Number,
       required: true,
     },
+
+    /**
+     * Whether checkbox checked (task is done)
+     */
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+
+    /**
+     * Task text
+     */
     message: {
       type: String,
       default: '',
     },
   },
   methods: {
+    /**
+     * Checkbox click handler
+     */
     updateClickHandler: function deleteClickHandler() {
       const { id, message, checked } = this;
 
@@ -48,6 +62,10 @@ export default {
         checked: !checked,
       });
     },
+
+    /**
+     * Delete icon click handler
+     */
     deleteClickHandler: function deleteClickHandler() {
       this.$emit('delete', this.id);
     },
