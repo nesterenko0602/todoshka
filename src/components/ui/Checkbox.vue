@@ -35,7 +35,7 @@ export default {
      *
      * @param {Event} event Native event
      */
-    updateHandler: function updateHandler(event) {
+    updateHandler(event) {
       const { id } = this;
       const { checked } = event.target;
 

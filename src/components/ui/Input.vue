@@ -33,7 +33,7 @@ export default {
       default: '',
     },
   },
-  data: function data() {
+  data() {
     return { message: '' };
   },
   computed: {
@@ -42,7 +42,7 @@ export default {
      *
      * @returns {Boolean}
      */
-    isFilled: function isFilled() {
+    isFilled() {
       return Boolean(this.message);
     },
 
@@ -51,7 +51,7 @@ export default {
      *
      * @returns {Array}
      */
-    classNames: function classNames() {
+    classNames() {
       return [
         'input',
         {
@@ -66,7 +66,7 @@ export default {
      *
      * @param {Event} event Native keydown event
      */
-    keyDownHandler: function keyDownHandler(event) {
+    keyDownHandler(event) {
       const { keyCode } = event;
 
       if (keyCode === KEY_CODES.ENTER) {
@@ -77,7 +77,7 @@ export default {
     /**
      * Form submit event handler
      */
-    submit: function submit() {
+    submit() {
       if (!this.message) {
         return;
       }
@@ -89,7 +89,7 @@ export default {
     /**
      * Clean up input field
      */
-    dropMessage: function dropMessage() {
+    dropMessage() {
       this.message = '';
     },
   },

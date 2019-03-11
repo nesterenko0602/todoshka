@@ -53,7 +53,7 @@ export default {
     /**
      * Checkbox click handler
      */
-    updateClickHandler: function deleteClickHandler() {
+    updateClickHandler() {
       const { id, message, checked } = this;
 
       this.$emit('update', {
@@ -66,7 +66,7 @@ export default {
     /**
      * Delete icon click handler
      */
-    deleteClickHandler: function deleteClickHandler() {
+    deleteClickHandler() {
       this.$emit('delete', this.id);
     },
   },

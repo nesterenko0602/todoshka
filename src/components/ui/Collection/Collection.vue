@@ -40,7 +40,7 @@ export default {
      *
      * @param {Number} itemId Id of element
      */
-    deleteHandler: function deleteHandler(itemId) {
+    deleteHandler(itemId) {
       this.$emit('delete', itemId);
     },
 
@@ -49,7 +49,7 @@ export default {
      *
      * @param {Object} updatedItem Item to update
      */
-    updateHandler: function deleteHandler(updatedItem) {
+    updateHandler(updatedItem) {
       this.$emit('update', updatedItem);
     },
   },

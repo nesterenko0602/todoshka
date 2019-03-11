@@ -27,7 +27,7 @@ export default {
       default: '24',
     },
   },
-  mounted: function mounted() {
+  mounted() {
     import(`svg/${this.name}`)
       .catch(() => {
         console.error(`Can't load icon "${this.name}"`);
