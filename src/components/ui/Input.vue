@@ -39,7 +39,7 @@ export default {
   computed: {
     /**
      * Whether input field not empty?
-     * 
+     *
      * @returns {Boolean}
      */
     isFilled: function isFilled() {
@@ -48,7 +48,7 @@ export default {
 
     /**
      * List of class names for input field
-     * 
+     *
      * @returns {Array}
      */
     classNames: function classNames() {
@@ -63,7 +63,7 @@ export default {
   methods: {
     /**
      * Input keydown event handler
-     * 
+     *
      * @param {Event} event Native keydown event
      */
     keyDownHandler: function keyDownHandler(event) {

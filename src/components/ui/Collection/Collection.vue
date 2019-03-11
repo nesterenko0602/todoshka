@@ -37,7 +37,7 @@ export default {
   methods: {
     /**
      * Item deletion event handler
-     * 
+     *
      * @param {Number} itemId Id of element
      */
     deleteHandler: function deleteHandler(itemId) {
@@ -46,7 +46,7 @@ export default {
 
     /**
      * Item state changing event handler
-     * 
+     *
      * @param {Object} updatedItem Item to update
      */
     updateHandler: function deleteHandler(updatedItem) {

@@ -32,7 +32,7 @@ export default {
   methods: {
     /**
      * Checkbox state changing handler
-     * 
+     *
      * @param {Event} event Native event
      */
     updateHandler: function updateHandler(event) {
