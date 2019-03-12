@@ -43,14 +43,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~variables';
+
+.list__wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 32px 8px rgba(0,0,0,.1);
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $mobile-width;
+  min-height: 300px;
+  padding: 12px 32px 32px;
+  width: $mobile-width;
+}
+
+@media screen and (max-width: $mobile-width) {
   .list__wrapper {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 32px 8px rgba(0,0,0,.1);
-    box-sizing: border-box;
-    margin: 20px;
-    min-height: 300px;
-    padding: 12px 56px 32px;
-    width: 500px;
+    border-radius: 0;
+    width: 100%;
   }
+}
 </style>

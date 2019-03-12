@@ -46,17 +46,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .checkbox {
-    align-items: center;
-    display: flex;
-    flex: 0 0 auto;
-    height: 18px;
-    width: 18px;
+.checkbox {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  height: 18px;
+  width: 18px;
 
-    input[type="checkbox"] {
-      cursor: pointer;
-      margin: 0;
-      transform: translate(25%, 0) scale(1.5);
-    }
+  input[type="checkbox"] {
+    cursor: pointer;
+    margin: 0;
+    transform: translate(25%, 0) scale(1.5);
   }
+}
 </style>

@@ -74,39 +74,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '~variables';
+@import '~variables';
 
+.list-item__wrapper {
+  align-items: center;
+  border-radius: 4px;
+  display: flex;
+  margin-bottom: 4px;
+  padding-left: 8px;
+
+  label {
+    cursor: pointer;
+    padding: 4px 4px 4px 8px;
+    width: 100%;
+  }
+
+  .svg-icon {
+    cursor: pointer;
+    display: none;
+    fill: $grey-dark;
+    padding: 6px 8px;
+    transition: fill .3s ease;
+
+    &:hover {
+      fill: $alert;
+    }
+  }
+
+  &:hover {
+    background: $grey-lighter;
+
+    .svg-icon {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
   .list-item__wrapper {
-    align-items: center;
-    border-radius: 4px;
-    display: flex;
-    margin-bottom: 4px;
-    padding-left: 8px;
-
-    label {
-      cursor: pointer;
-      padding: 4px 4px 4px 8px;
-      width: 100%;
+    &:hover {
+      background: transparent;
     }
 
     .svg-icon {
-      cursor: pointer;
-      display: none;
-      fill: $grey-dark;
-      padding: 6px 8px;
-      transition: fill .3s ease;
-
-      &:hover {
-        fill: $alert;
-      }
-    }
-
-    &:hover {
-      background: $grey-lighter;
-
-      .svg-icon {
-        display: block;
-      }
+      display: block;
     }
   }
+}
 </style>

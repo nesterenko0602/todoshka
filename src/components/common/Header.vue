@@ -10,18 +10,24 @@
 <script>
 export default {
   name: 'Header',
-  components: {
-  },
 };
 </script>
 
-<style scoped>
-  .header__wrapper {
-    flex: 0 0 auto;
-    margin: 60px auto 30px;
-  }
+<style lang="scss" scoped>
+@import '~variables';
 
+.header__wrapper {
+  flex: 0 0 auto;
+  margin: 60px auto 30px;
+}
+
+.header__logo {
+  width: 300px;
+}
+
+@media screen and (max-width: $mobile-width) {
   .header__logo {
-    width: 300px;
+    width: 150px;
   }
+}
 </style>
